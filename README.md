@@ -21,17 +21,12 @@ pip install -r requirements.txt
 
 ### Executing program
 
-To initialize the database, run in your terminal:
+To start the server, run in your terminal:
 ```
-flask --app flaskr init-db 
-```
-
-To spin the server up, run in your terminal:
-```
-flask --app flaskr run
+python manage.py runserver
 ```
 
-Visit http://127.0.0.1:5000/ in your browser
+Visit http://127.0.0.1:8000/ in your browser.
 
 ### Output
 
