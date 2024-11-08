@@ -45,7 +45,7 @@ Stephen Blomberg
 
 Inspiration, code snippets, etc.
 * [Jason Zeller](https://www.youtube.com/@profzeller)
-* [Flask](https://flask.palletsprojects.com/en/3.0.x/tutorial/templates/)
+* [Django](https://docs.djangoproject.com/en/5.0/)
 * [Jinja](https://jinja.palletsprojects.com/en/stable/)
 * [Bootstrap](https://getbootstrap.com/)
 * [ChatGPT](https://chatgpt.com/share/672ceb52-2d48-8002-a176-5bbbc687c8ff)
