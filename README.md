@@ -23,7 +23,10 @@ pip install -r requirements.txt
 
 To start the server, run in your terminal:
 ```
+python manage.py makemigrations
+python manage.py migrate
 python manage.py runserver
+python manage.py createsuperuser
 ```
 
 Visit http://127.0.0.1:8000/ in your browser.
