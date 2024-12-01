@@ -1,0 +1,13 @@
+{% extends 'collection/base.html' %}
+
+{% block title %}Album List - Vinyl Vault{% endblock %}
+
+{% block content %}
+<h1>Vinyl Album Collection</h1>
+<a href="{% url 'album_create' %}">Add New Album</a>
+<ul>
+    {% for album in albums %}
+        <li><a href="{% url 'album_detail' album.pk %}">{{ album.title }}</a></li>
+    {% endfor %}
+</ul>
+{% endblock %}

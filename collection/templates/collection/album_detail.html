@@ -1,0 +1,16 @@
+{% extends 'collection/base.html' %}
+
+{% block title %}{{ album.title }} - Vinyl Vault{% endblock %}
+
+{% block content %}
+<h1>{{ album.title }}</h1>
+<p>Artist: {{ album.artist }}</p>
+<p>Variant: {{ album.variant }}</p>
+<p>Release Date: {{ album.release_date }}</p>
+<p>Description: {{ album.description }}</p>
+{% if album.cover_image %}
+    <img src="{{ album.cover_image.url }}" alt="{{ album.title }}">
+{% endif %}
+<a href="{% url 'album_edit' album.pk %}">Edit</a>
+<a href="{% url 'album_list' %}">Back to List</a>
+{% endblock %}
