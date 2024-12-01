@@ -13,11 +13,33 @@
     <img src="{{ album.cover_image.url }}" alt="{{ album.title }}">
 {% endif %}
 
-<a href="{% url 'album_edit' album.pk %}">Edit</a> |
-<a href="{% url 'album_list' %}">Back to List</a>
+<a href="{% url 'album_edit' album.pk %}" class="btn btn-primary">Edit</a>
+<a href="{% url 'album_list' %}" class="btn btn-secondary">Back to List</a>
 
-<form method="post" action="{% url 'album_delete' album.pk %}" style="display: inline;">
-    {% csrf_token %}
-    <button type="submit" class="btn btn-danger">Remove Album</button>
-</form>
+<!-- Delete Button -->
+<button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteModal">
+    Remove Album
+</button>
+
+<!-- Delete Confirmation Modal -->
+<div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="deleteModalLabel">Confirm Deletion</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                Are you sure you want to delete "{{ album.title }}"? This action cannot be undone.
+            </div>
+            <div class="modal-footer">
+                <form method="post" action="{% url 'album_delete' album.pk %}">
+                    {% csrf_token %}
+                    <button type="submit" class="btn btn-danger">Yes, Delete</button>
+                </form>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+            </div>
+        </div>
+    </div>
+</div>
 {% endblock %}
